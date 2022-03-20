@@ -37,7 +37,7 @@ public class EliminarAlumnoServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Eliminar carrera</title>");
+            out.println("<title>Eliminar alumno</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>");
@@ -59,7 +59,7 @@ public class EliminarAlumnoServlet extends HttpServlet {
             out.println("<div class='alert alert-primary' role='alert'>");
             out.println("<h2> Registro eliminado satisfactoriamente </h2>");
             out.println("</div>");
-            out.println("<a href='ListadoAlumnoServlet' class='btn btn-primary'>Ver Listado de Alumnos actual </a>");
+            out.println("<a href='ListadoAlumnoServlet' class='btn btn-primary'> Volver a Listado de Alumnos </a>");
             out.println("</div>");
             out.println("</body>");
             out.println("</html>");

@@ -36,7 +36,7 @@ public class VerAlumnoServlet extends HttpServlet {
             out.println("<html>");
             out.println("<head>");
             out.println("<meta charset='UTF-8'>");
-            out.println("<title>Lista de Carreras</title>");
+            out.println("<title>Datos de alumno</title>");
             out.println("<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>");
             out.println("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'>");
             out.println("<link href='./css/styles.css' rel='stylesheet'/>");
@@ -79,7 +79,7 @@ public class VerAlumnoServlet extends HttpServlet {
             try {
                 dtoToShow = dao.read(dto);  //
 
-                out.println("<br> <h4>Id:" + dtoToShow.getEntidad().getIdCarrera() + "</h4> <hr />");
+                out.println("<br> <h4>Id: " + dtoToShow.getEntidad().getIdCarrera() + "</h4> <hr />");
                 out.println("<h4>Nombre: " + dtoToShow.getEntidad().getNombreAlumno()+ "</h4> <hr />");
                 out.println("<h4>Apellido paterno: " + dtoToShow.getEntidad().getPaternoAlumno()+ "</h4> <hr />");
                 out.println("<h4>Apellido materno: " + dtoToShow.getEntidad().getMaternoAlumno()+ "</h4> <hr />");
@@ -89,7 +89,7 @@ public class VerAlumnoServlet extends HttpServlet {
             } catch (SQLException ex) {
                 Logger.getLogger(VerCarreraServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
-            out.println("<a href='ListadoAlumnoServlet' class='btn btn-primary'> Ver Listado de Carreras </a>");
+            out.println("<a href='ListadoAlumnoServlet' class='btn btn-primary'>  Volver a Listado de Alumnos </a>");
             out.println("</div>");
             out.println("</body>");
             out.println("</html>");

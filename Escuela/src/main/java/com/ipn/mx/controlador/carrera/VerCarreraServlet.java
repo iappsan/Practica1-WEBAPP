@@ -42,7 +42,7 @@ public class VerCarreraServlet extends HttpServlet {
             out.println("<html>");
             out.println("<head>");
             out.println("<meta charset='UTF-8'>");
-            out.println("<title>Lista de Carreras</title>");
+            out.println("<title>Datos de Carrera</title>");
             out.println("<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>");
             out.println("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'>");
             out.println("<link href='./css/styles.css' rel='stylesheet'/>");
@@ -92,7 +92,7 @@ public class VerCarreraServlet extends HttpServlet {
             } catch (SQLException ex) {
                 Logger.getLogger(VerCarreraServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
-            out.println("<br> <a href='ListadoCarreraServlet' class='btn btn-primary'> Ver Listado de Carreras </a>");
+            out.println("<br> <a href='ListadoCarreraServlet' class='btn btn-primary'> Volver a Listado de Carreras </a>");
             out.println("</div>");
             out.println("<script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>");
             out.println("<script src='js/materialize.js'></script>");

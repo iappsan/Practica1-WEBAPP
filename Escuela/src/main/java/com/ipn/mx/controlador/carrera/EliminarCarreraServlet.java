@@ -57,7 +57,7 @@ public class EliminarCarreraServlet extends HttpServlet {
             CarreraDTO dto = new CarreraDTO();
             dto.getEntidad().setIdCarrera(Long.parseLong(idToDelete));  //Recibiendo el id
             out.println("<div class='container'>");
-            out.println("<h1>" + "Se ha eliminado la Carrera seleccionada" + "</h1>");
+            out.println("<h1>" + "Eliminando la Carrera seleccionada..." + "</h1>");
             try {
                 dao.delete(dto);
             } catch (SQLException ex) {
@@ -67,7 +67,7 @@ public class EliminarCarreraServlet extends HttpServlet {
             out.println("<div class='alert alert-primary' role='alert'>");
             out.println("<h2> Registro eliminado satisfactoriamente </h2>");
             out.println("</div>");
-            out.println("<a href='ListadoCarreraServlet' class='btn btn-primary'>Ver Listado de Carreras actual </a>");
+            out.println("<a href='ListadoCarreraServlet' class='btn btn-primary'>Volver a Listado de Carreras </a>");
             out.println("</div>");
             out.println("</body>");
             out.println("</html>");
