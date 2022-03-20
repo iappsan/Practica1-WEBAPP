@@ -24,6 +24,10 @@
         <servlet-name>VerAlumnoServlet</servlet-name>
         <servlet-class>com.ipn.mx.controlador.carrera.VerAlumnoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ActualizarAlumnoServlet2</servlet-name>
+        <servlet-class>com.ipn.mx.controlador.carrera.ActualizarAlumnoServlet2</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AgregarAlumnoServlet</servlet-name>
         <url-pattern>/AgregarAlumnoServlet</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>VerAlumnoServlet</servlet-name>
         <url-pattern>/VerAlumnoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ActualizarAlumnoServlet2</servlet-name>
+        <url-pattern>/ActualizarAlumnoServlet2</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
