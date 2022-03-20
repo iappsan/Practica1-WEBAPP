@@ -28,7 +28,7 @@ public class Alumno {
     private static final String SQL_DELETE = "delete from Alumno where idAlumno = ?";
 
     private static final String SQL_SELECT = "select * from Alumno where idAlumno = ?";
-    private static final String SQL_SELECT_ALL = "select * from Alumno";
+    private static final String SQL_SELECT_ALL = "select * from Alumno;";
 
     private Connection conexion;
     
@@ -121,19 +121,20 @@ public class Alumno {
 
     public List readAll() throws SQLException {
         obtenerConexion();
-        PreparedStatement ps = null;
         ResultSet rs = null;
-        List lista = null;
+        List lista;
         try {
-            ps = conexion.prepareStatement(SQL_SELECT_ALL);
+            PreparedStatement ps = conexion.prepareStatement(SQL_SELECT_ALL);
             rs = ps.executeQuery();
             lista = obtenerResultados(rs);
-            if (lista.size() > 0){
+            if (!lista.isEmpty()){
                 return lista;   // La lísta tiene al menos 1 registro
             }else{
                 return null;    // La lista no tiene nada 
             }
             
+        } catch (SQLException e){
+            System.out.println(e);
         } finally {
             if (rs != null) {
                 rs.close();
@@ -145,7 +146,9 @@ public class Alumno {
                 conexion.close();
             }
         }
+        return null;
     }
+    
     public AlumnoDTO read(AlumnoDTO dto) throws SQLException {
         obtenerConexion();
         PreparedStatement ps = null;

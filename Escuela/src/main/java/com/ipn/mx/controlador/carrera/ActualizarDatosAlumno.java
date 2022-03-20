@@ -94,7 +94,7 @@ public class ActualizarDatosAlumno extends HttpServlet {
             } catch (SQLException ex) {
                 Logger.getLogger(EliminarCarreraServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
-            out.println("<a href='ListadoServlet' class='btn btn-primary'> Listado de Carreras </a>");
+            out.println("<a href='ListadoServletAlumno' class='btn btn-primary'> Listado de Alumnos </a>");
             out.println("        </div>");
             out.println("</body>");
             out.println("</html>");
