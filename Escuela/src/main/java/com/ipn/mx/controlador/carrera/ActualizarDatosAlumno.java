@@ -2,10 +2,7 @@ package com.ipn.mx.controlador.carrera;
 
 import com.ipn.mx.modelo.dao.Alumno;
 import com.ipn.mx.modelo.dto.AlumnoDTO;
-import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
