@@ -41,18 +41,5 @@ public class Carrera implements Serializable{
     public void setDescripcionCarrera(String descripcionCarrera) {
         this.descripcionCarrera = descripcionCarrera;
     }
-    
-    
- 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  
 }

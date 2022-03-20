@@ -3,6 +3,7 @@ package com.ipn.mx.controlador.carrera;
 import com.ipn.mx.modelo.dao.Alumno;
 import com.ipn.mx.modelo.dto.AlumnoDTO;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -16,6 +17,7 @@ import java.util.logging.Logger;
  *
  * @author deb
  */
+@WebServlet(name = "ActualizarDatosAlumno", value = "/ActualizarDatosAlumno")
 public class ActualizarDatosAlumno extends HttpServlet {
    
     /** 
@@ -37,8 +39,10 @@ public class ActualizarDatosAlumno extends HttpServlet {
             out.println("<head>");
             out.println("<meta charset='UTF-8'>");
             out.println("<title>Actualizar Datos Alumno</title>");
-            out.println("<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' />");
-            out.println("<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' ></script>");
+            out.println("<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>");
+            out.println("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'>");
+            out.println("<link href='./css/styles.css' rel='stylesheet'/>");
+            out.println("<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.4/css/all.css' />");
             out.println("</head>");
             out.println("<body>");
             out.println("<div class='container'>																																													");
@@ -81,9 +85,9 @@ public class ActualizarDatosAlumno extends HttpServlet {
             dto.getEntidad().setIdAlumno(Long.parseLong(idToUpdate));
             dto.getEntidad().setNombreAlumno(newNombre);
             dto.getEntidad().setPaternoAlumno(newApPat);
-            dto.getEntidad().setPaternoAlumno(newApMat);
-            dto.getEntidad().setPaternoAlumno(newMail);
-            dto.getEntidad().setPaternoAlumno(newIdCarrera);
+            dto.getEntidad().setMaternoAlumno(newApMat);
+            dto.getEntidad().setEmailAlumno(newMail);
+            dto.getEntidad().setIdCarrera(Integer.parseInt(newIdCarrera));
             
             try {
                 dao.update(dto);
@@ -94,7 +98,7 @@ public class ActualizarDatosAlumno extends HttpServlet {
             } catch (SQLException ex) {
                 Logger.getLogger(EliminarCarreraServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
-            out.println("<a href='ListadoServletAlumno' class='btn btn-primary'> Listado de Alumnos </a>");
+            out.println("<a href='ListadoAlumnoServlet' class='btn btn-primary'> Listado de Carreras </a>");
             out.println("        </div>");
             out.println("</body>");
             out.println("</html>");

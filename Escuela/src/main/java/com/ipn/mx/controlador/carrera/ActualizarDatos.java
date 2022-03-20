@@ -44,31 +44,12 @@ public class ActualizarDatos extends HttpServlet {
             out.println("<head>");
             out.println("<meta charset='UTF-8'>");
             out.println("<title>Actualizar Datos</title>");
-            out.println("<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' />");
-            out.println("<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' ></script>");
+            out.println("<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>");
+            out.println("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'>");
+            out.println("<link href='./css/styles.css' rel='stylesheet'/>");
+            out.println("<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.4/css/all.css' />");
             out.println("</head>");
             out.println("<body>");
-            out.println("<div class='container'>																																													");
-            out.println("            <nav class='navbar navbar-expand-lg navbar-light bg-light'>																																	");
-            out.println("                <div class='container-fluid'>                                                                                                                                                              ");
-            out.println("                    <a class='navbar-brand' href='./'>Escuela</a>                                                                                                                                           ");
-            out.println("                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>     ");
-            out.println("                        <span class='navbar-toggler-icon'></span>                                                                                                                                          ");
-            out.println("                    </button>                                                                                                                                                                              ");
-            out.println("                    <div class='collapse navbar-collapse' id='navbarNav'>                                                                                                                                  ");
-            out.println("                        <ul class='navbar-nav'>                                                                                                                                                            ");
-            out.println("                            <li class='nav-item'>                                                                                                                                                          ");
-            out.println("                                <a class='nav-link' href='./carrera/nuevo.html'>Agregar Carrera</a>                                                                                                        ");
-            out.println("                                <!-- <a class='nav-link' href='./CarreraServlet'>Carrera</a>-->                                                                                                            ");
-            out.println("                            </li>                                                                                                                                                                          ");
-            out.println("                            <li class='nav-item'>                                                                                                                                                          ");
-            out.println("                                <a class='nav-link' href='ListadoServlet'>Listado de Carreras</a>                                                                                                          ");
-            out.println("                            </li>                                                                                                                                                                          ");
-            out.println("                        </ul>                                                                                                                                                                              ");
-            out.println("                    </div>                                                                                                                                                                                 ");
-            out.println("                </div>                                                                                                                                                                                     ");
-            out.println("            </nav>                                                                                                                                                                                         ");
-            out.println("</div>");
 
             out.println("<div class='container'>");
             out.println("<h1>Actualizando Datos</h1>");
@@ -94,7 +75,7 @@ public class ActualizarDatos extends HttpServlet {
             } catch (SQLException ex) {
                 Logger.getLogger(EliminarCarreraServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
-            out.println("<a href='ListadoServlet' class='btn btn-primary'> Listado de Carreras </a>");
+            out.println("<a href='ListadoCarreraServlet' class='btn btn-primary'> Listado de Alumnos </a>");
             out.println("        </div>");
             out.println("</body>");
             out.println("</html>");

@@ -5,6 +5,7 @@ import com.ipn.mx.modelo.dto.AlumnoDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -16,6 +17,7 @@ import java.util.logging.Logger;
  *
  * @author deb
  */
+@WebServlet(name = "EliminarAlumnoServlet", value = "/EliminarAlumnoServlet")
 public class EliminarAlumnoServlet extends HttpServlet {
    
     /** 
@@ -38,8 +40,10 @@ public class EliminarAlumnoServlet extends HttpServlet {
             out.println("<title>Eliminar carrera</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'>");
-            out.println("<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' ></script>");
+            out.println("<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>");
+            out.println("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'>");
+            out.println("<link href='./css/styles.css' rel='stylesheet'/>");
+            out.println("<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.4/css/all.css' />");
 
             Alumno dao = new Alumno();
             AlumnoDTO dto = new AlumnoDTO();
@@ -55,7 +59,7 @@ public class EliminarAlumnoServlet extends HttpServlet {
             out.println("<div class='alert alert-primary' role='alert'>");
             out.println("<h2> Registro eliminado satisfactoriamente </h2>");
             out.println("</div>");
-            out.println("<a href='ListadoServlet' class='btn btn-primary'>Ver Listado de Carreras actual </a>");
+            out.println("<a href='ListadoAlumnoServlet' class='btn btn-primary'>Ver Listado de Alumnos actual </a>");
             out.println("</div>");
             out.println("</body>");
             out.println("</html>");

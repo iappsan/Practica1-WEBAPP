@@ -19,7 +19,7 @@ CREATE TABLE Alumno (
   idCarrera int(10) DEFAULT NULL,
   PRIMARY KEY (idAlumno),
   KEY idCarrera (idCarrera),
-  CONSTRAINT alumno_ibfk_1 FOREIGN KEY (idCarrera) REFERENCES carrera (idCarrera) ON DELETE CASCADE ON UPDATE CASCADE
+  FOREIGN KEY (idCarrera) REFERENCES carrera (idCarrera) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO Carrera(nombreCarrera,descripcionCarrera)

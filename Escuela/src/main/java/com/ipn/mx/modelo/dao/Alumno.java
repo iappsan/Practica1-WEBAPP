@@ -28,36 +28,32 @@ public class Alumno {
     private static final String SQL_DELETE = "delete from Alumno where idAlumno = ?";
 
     private static final String SQL_SELECT = "select * from Alumno where idAlumno = ?";
-    private static final String SQL_SELECT_ALL = "select * from Alumno;";
+    private static final String SQL_SELECT_ALL = "select * from Alumno";
 
     private Connection conexion;
-    
-    public Alumno(){
+    private static final String URL = "jdbc:mysql://localhost:3306/EscuelaWeb";
+    private static final String USERNAME = "deb";
+    private static final String PASSWORD = "password123";
+    public Alumno() {
     }
-    
+
     private void obtenerConexion() {
         //obtener conexion
-        String usuario = "deb";
-        String clave = "password123";
-        String url = "jdbc:mysql://localhost:3306/EscuelaWeb?serverTimezone=America/Mexico_City&allowPublicKeyRetrieval=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&useSSL=false";
-        //String url = "jdbc:mysql://localhost:3306/EscuelaWeb?
-        //serverTimeZone=America/Mexico_City&allowPublicKeyRetrieval=true&
-        //useSSL=false";
-
         String driverBD = "com.mysql.cj.jdbc.Driver";   //Esto se ve en dependecies > mysql-connector> nombreDelDriverDeLaBD
 
         try {
             Class.forName(driverBD);
             //DirverManager, carga el Driver
-            conexion = DriverManager.getConnection(url, usuario, clave);
+            conexion
+                    = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(CarreraDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     /* 
         Inserta un nuveo registro 
-    */
+     */
     public void create(AlumnoDTO dto) throws SQLException {
         obtenerConexion();
         PreparedStatement ps = null;
@@ -91,7 +87,8 @@ public class Alumno {
             ps.setString(4, dto.getEntidad().getEmailAlumno());
             ps.setInt(5, dto.getEntidad().getIdCarrera());
             ps.setInt(6, dto.getEntidad().getIdAlumno().intValue());
-            ps.executeUpdate();
+            System.out.println(ps);
+            ps.execute();
         } finally {
             if (ps != null) {
                 ps.close();
@@ -121,20 +118,19 @@ public class Alumno {
 
     public List readAll() throws SQLException {
         obtenerConexion();
+        PreparedStatement ps = null;
         ResultSet rs = null;
-        List lista;
+        List lista = null;
         try {
-            PreparedStatement ps = conexion.prepareStatement(SQL_SELECT_ALL);
+            ps = conexion.prepareStatement(SQL_SELECT_ALL);
             rs = ps.executeQuery();
             lista = obtenerResultados(rs);
-            if (!lista.isEmpty()){
+            if (!lista.isEmpty()) {
                 return lista;   // La lísta tiene al menos 1 registro
-            }else{
+            } else {
                 return null;    // La lista no tiene nada 
             }
-            
-        } catch (SQLException e){
-            System.out.println(e);
+
         } finally {
             if (rs != null) {
                 rs.close();
@@ -146,9 +142,8 @@ public class Alumno {
                 conexion.close();
             }
         }
-        return null;
     }
-    
+
     public AlumnoDTO read(AlumnoDTO dto) throws SQLException {
         obtenerConexion();
         PreparedStatement ps = null;
@@ -197,9 +192,9 @@ public class Alumno {
         }
     }
 
-    private List obtenerResultados(ResultSet rs) throws SQLException{
+    private List obtenerResultados(ResultSet rs) throws SQLException {
         List resultados = new ArrayList();
-        while (rs.next()) {            
+        while (rs.next()) {
             AlumnoDTO dto = new AlumnoDTO();
             dto.getEntidad().setIdAlumno(rs.getLong("idAlumno"));
             dto.getEntidad().setNombreAlumno(rs.getString("nombreAlumno"));

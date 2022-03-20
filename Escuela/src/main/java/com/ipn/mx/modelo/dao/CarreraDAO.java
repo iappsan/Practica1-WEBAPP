@@ -27,25 +27,23 @@ public class CarreraDAO {
     private static final String SQL_SELECT_ALL = "select * from Carrera";
 
     private Connection conexion;
+    private static final String URL = "jdbc:mysql://localhost:3306/EscuelaWeb";
+    private static final String USERNAME = "deb";
+    private static final String PASSWORD = "password123";
 
     public CarreraDAO() {
     }
 
     private void obtenerConexion() {
         //obtener conexion
-        String usuario = "deb";
-        String clave = "password123";
-        String url = "jdbc:mysql://localhost:3306/EscuelaWeb?serverTimezone=America/Mexico_City&allowPublicKeyRetrieval=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&useSSL=false";
-        //String url = "jdbc:mysql://localhost:3306/EscuelaWeb?
-        //serverTimeZone=America/Mexico_City&allowPublicKeyRetrieval=true&
-        //useSSL=false";
 
         String driverBD = "com.mysql.cj.jdbc.Driver";   //Esto se ve en dependecies > mysql-connector> nombreDelDriverDeLaBD
 
         try {
             Class.forName(driverBD);
             //DirverManager, carga el Driver
-            conexion = DriverManager.getConnection(url, usuario, clave);
+            conexion
+                    = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(CarreraDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
