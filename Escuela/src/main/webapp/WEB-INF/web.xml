@@ -8,6 +8,10 @@
         <servlet-name>AgregarServletAlumno</servlet-name>
         <servlet-class>com.ipn.mx.controlador.carrera.AgregarServletAlumno</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ActualizarDatosAlumno</servlet-name>
+        <servlet-class>com.ipn.mx.controlador.carrera.ActualizarDatosAlumno</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AgregarAlumnoServlet</servlet-name>
         <url-pattern>/AgregarAlumnoServlet</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>AgregarServletAlumno</servlet-name>
         <url-pattern>/AgregarServletAlumno</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ActualizarDatosAlumno</servlet-name>
+        <url-pattern>/ActualizarDatosAlumno</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
