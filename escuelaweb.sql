@@ -27,7 +27,7 @@ INSERT INTO Carrera(nombreCarrera,descripcionCarrera)
 		('LCD 2020','Datos'),
         ('ISC 2009	','Sistemas');
 
-INSERT INTO Alumno(nombreAlumno, paternoAlumno,maternoAlumno,emailAlumno,idCarrera) 
+INSERT INTO Alumno(nombreAlumno,paternoAlumno,maternoAlumno,emailAlumno,idCarrera) 
 	VALUES
 		('Alberto','Peña','Atanasio','a@gmail.com',1),
         ('José','Asunción ','Zárate','zaj@gmail.com',2);

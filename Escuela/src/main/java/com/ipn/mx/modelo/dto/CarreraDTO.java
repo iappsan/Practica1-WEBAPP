@@ -54,8 +54,8 @@ public class CarreraDTO implements Serializable{
     
     private Connection conexion;
     private void obtenerConexion(){
-        String usuario="root";
-        String clave="admin";
+        String usuario="deb";
+        String clave="password123";
         String url ="jdbc:mysql://localhost:3306/EscuelaWeb";
         String driverBD="com.mysql.cj.jdbc.Driver";
         try {

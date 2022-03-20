@@ -5,7 +5,6 @@
 package com.ipn.mx.modelo.dto;
 
 import com.ipn.mx.modelo.entidades.Alumno;
-import com.ipn.mx.modelo.entidades.Carrera;
 import java.io.Serializable;
 
 /**

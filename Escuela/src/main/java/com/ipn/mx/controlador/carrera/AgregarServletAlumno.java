@@ -1,7 +1,7 @@
 package com.ipn.mx.controlador.carrera;
 
-import com.ipn.mx.modelo.dao.CarreraDAO;
-import com.ipn.mx.modelo.dto.CarreraDTO;
+import com.ipn.mx.modelo.dao.Alumno;
+import com.ipn.mx.modelo.dto.AlumnoDTO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -15,31 +15,24 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author darkdestiny
+ * @author deb
  */
-@WebServlet(name = "AgregarServlet", value = "/AgregarServlet")
-public class AgregarServlet extends HttpServlet {
-
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
+@WebServlet(name = "AgregarServletAlumno", value = "/AgregarServletAlumno")
+public class AgregarServletAlumno extends HttpServlet {
+   
+    /** 
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+        throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
 
         try (PrintWriter out = response.getWriter()) {
-            //String nombre = request.getParameter("txtNombreCarrea");
-            //String descripcion = request.getParameter("txtDescripcionCarrera");
-
-            /* TODO output your page here. You may use following sample code. */
-            
             /* ---> IMPRIMIENDO EL HTML <--- */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -58,10 +51,13 @@ public class AgregarServlet extends HttpServlet {
             //Da el ContextPath o Carpeta Raíz de Acceso a los servlets 
             out.println("<h1> Insertando registro ...</h1>");
 
-            CarreraDTO dto = new CarreraDTO();
-            dto.getEntidad().setNombreCarrera(request.getParameter("txtNombreCarrera")); // Fijando un nombre de la carrera en la entidad  
-            dto.getEntidad().setDescripcionCarrera(request.getParameter("txtDescripcionCarrera"));  //Fijando una descripción en la entidad 
-            CarreraDAO dao = new CarreraDAO();  //Creando el objeto para acceder a las consultas
+            AlumnoDTO dto = new AlumnoDTO();
+            dto.getEntidad().setNombreAlumno(request.getParameter("txtNombreAlumno")); // Fijando un nombre de la carrera en la entidad  
+            dto.getEntidad().setPaternoAlumno(request.getParameter("txtApellidoPat"));  //Fijando una descripción en la entidad 
+            dto.getEntidad().setMaternoAlumno(request.getParameter("txtApellidoMat"));  //Fijando una descripción en la entidad 
+            dto.getEntidad().setEmailAlumno(request.getParameter("txtMail"));  //Fijando una descripción en la entidad 
+            dto.getEntidad().setIdCarrera(Integer.parseInt(request.getParameter("idCarrera")));  //Fijando una descripción en la entidad 
+            Alumno dao = new Alumno();  //Creando el objeto para acceder a las consultas
             try {
                 dao.create(dto);    //Inserta datos a la BD
                    out.println("<div class='alert alert-primary' role='alert'>");
@@ -72,18 +68,17 @@ public class AgregarServlet extends HttpServlet {
                 Logger.getLogger(AgregarServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-           out.println("<a href='ListadoServlet' class='btn btn-primary'> Listado de Carreras </a>");
+           out.println("<a href='ListadoServletAlumno' class='btn btn-primary'> Listado de alumnos </a>");
             
             out.println("</div>");
             out.println("</body>");
             out.println("</html>");
         }
-    }
+    } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
+    /** 
      * Handles the HTTP <code>GET</code> method.
-     *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
@@ -91,13 +86,12 @@ public class AgregarServlet extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    throws ServletException, IOException {
         processRequest(request, response);
-    }
+    } 
 
-    /**
+    /** 
      * Handles the HTTP <code>POST</code> method.
-     *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
@@ -105,13 +99,12 @@ public class AgregarServlet extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
+    /** 
      * Returns a short description of the servlet.
-     *
      * @return a String containing servlet description
      */
     @Override
