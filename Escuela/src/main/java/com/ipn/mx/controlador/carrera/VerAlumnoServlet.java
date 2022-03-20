@@ -36,7 +36,7 @@ public class VerAlumnoServlet extends HttpServlet {
             out.println("<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'>");
             out.println("<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' ></script>");
 
-            out.println("<title>Ver Carrera</title>");
+            out.println("<title>Ver Alumno</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<div class='container'>																																													");
@@ -62,7 +62,7 @@ public class VerAlumnoServlet extends HttpServlet {
             out.println("</div>");
             
             out.println("<div class='container'>");
-            out.println("<h1>Estos son los datos de la Carrera Seleccionada</h1>");
+            out.println("<h1>Estos son los datos del Alumno Seleccionado</h1>");
 
             // Recibiendo el ID para mostrar el registro correspondiente 
             String idVerAlumno = request.getParameter("id");
@@ -83,7 +83,7 @@ public class VerAlumnoServlet extends HttpServlet {
             } catch (SQLException ex) {
                 Logger.getLogger(VerCarreraServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
-            out.println("<a href='ListadoServlet' class='btn btn-primary'> Ver Listado de Carreras </a>");
+            out.println("<a href='ListadoServletAlumno' class='btn btn-primary'> Ver Listado de Alumnos</a>");
             out.println("</div>");
             out.println("</body>");
             out.println("</html>");

@@ -34,7 +34,7 @@ public class ListadoServletAlumno extends HttpServlet {
             out.println("<html>");
             out.println("<head>");
             out.println("<meta charset='UTF-8'>");
-            out.println("<title>Lista de Carreras</title>");
+            out.println("<title>Lista de Alumnos</title>");
             out.println("<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'>");
             out.println("<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' ></script>");
 
@@ -67,7 +67,7 @@ public class ListadoServletAlumno extends HttpServlet {
             out.println("</div>");
 
             out.println("<div class='container'>");
-            out.println("<h1>Carreras de la Escuela </h1>");
+            out.println("<h1>Alumnos de la Escuela </h1>");
             out.println("</div>");
 
             out.println("<div class='container'>");
@@ -92,7 +92,7 @@ public class ListadoServletAlumno extends HttpServlet {
                     dto = (AlumnoDTO) lista.get(i);
                     out.println("<tr>");
                     // La referencia está al mismo nivel de este Servlet 
-                    out.println("<td><a href='VerCarreraServlet?id=" + dto.getEntidad().getIdCarrera() + "' class='btn btn-outline-warning'>"
+                    out.println("<td><a href='VerAlumnoServlet?id=" + dto.getEntidad().getIdAlumno()+ "' class='btn btn-outline-warning'>"
                             + "Ver"
                             + "</a></td>");
                     out.println("<td>" + dto.getEntidad().getNombreAlumno()+ "</td>");

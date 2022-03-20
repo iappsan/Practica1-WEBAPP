@@ -153,8 +153,8 @@ public class Alumno {
         List lista = null;
         try {
             ps = conexion.prepareStatement(SQL_SELECT);
-            ps.setLong(1, dto.getEntidad().getIdCarrera());
-            rs = ps.executeQuery();
+            ps.setLong(1, dto.getEntidad().getIdAlumno());
+                rs = ps.executeQuery();
             lista = obtenerResultados(rs);
             if (!lista.isEmpty()){
                 return (AlumnoDTO) lista.get(0);
