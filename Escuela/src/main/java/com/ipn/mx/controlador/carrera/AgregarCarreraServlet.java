@@ -17,10 +17,6 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author darkdestiny
- */
 @WebServlet(name = "AgregarCarreraServlet", value = "/AgregarCarreraServlet")
 public class AgregarCarreraServlet extends HttpServlet {
 

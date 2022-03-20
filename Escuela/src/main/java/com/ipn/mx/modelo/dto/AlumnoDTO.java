@@ -7,10 +7,6 @@ package com.ipn.mx.modelo.dto;
 import com.ipn.mx.modelo.entidades.Alumno;
 import java.io.Serializable;
 
-/**
- *
- * @author darkdestiny
- */
 public class AlumnoDTO implements Serializable {
 
     private Alumno entidad;

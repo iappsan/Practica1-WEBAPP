@@ -13,10 +13,6 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author deb
- */
 @WebServlet(name = "EliminarAlumnoServlet", value = "/EliminarAlumnoServlet")
 public class EliminarAlumnoServlet extends HttpServlet {
    

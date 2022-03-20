@@ -18,10 +18,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author darkdestiny
- */
 @WebServlet(name = "ListadoCarreraServlet", value = "/ListadoCarreraServlet")
 public class ListadoCarreraServlet extends HttpServlet {
 

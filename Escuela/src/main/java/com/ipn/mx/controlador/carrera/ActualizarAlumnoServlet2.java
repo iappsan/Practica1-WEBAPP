@@ -8,10 +8,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-/**
- *
- * @author deb
- */
 @WebServlet(name = "ActualizarAlumnoServlet2", value = "/ActualizarAlumnoServlet2")
 public class ActualizarAlumnoServlet2 extends HttpServlet {
    

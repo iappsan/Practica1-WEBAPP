@@ -6,10 +6,6 @@ package com.ipn.mx.modelo.entidades;
 
 import java.io.Serializable;
 
-/**
- *
- * @author darkdestiny
- */
 public class Carrera implements Serializable{
     private Long idCarrera;
     private String nombreCarrera;

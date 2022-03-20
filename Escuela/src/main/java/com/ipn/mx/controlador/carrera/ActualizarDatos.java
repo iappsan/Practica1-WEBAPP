@@ -13,10 +13,6 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author L450
- */
 @WebServlet(name = "ActualizarDatos", urlPatterns = {"/ActualizarDatos"})
 public class ActualizarDatos extends HttpServlet {
 

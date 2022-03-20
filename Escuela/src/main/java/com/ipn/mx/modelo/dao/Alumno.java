@@ -15,10 +15,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author darkdestiny
- */
 public class Alumno {
 
     private static final String SQL_INSERT = "insert into Alumno(nombreAlumno,paternoAlumno,maternoAlumno,emailAlumno,idCarrera) "
@@ -32,8 +28,8 @@ public class Alumno {
 
     private Connection conexion;
     private static final String URL = "jdbc:mysql://localhost:3306/EscuelaWeb";
-    private static final String USERNAME = "deb";
-    private static final String PASSWORD = "password123";
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "root";
     public Alumno() {
     }
 

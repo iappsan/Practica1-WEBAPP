@@ -13,10 +13,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/**
- *
- * @author deb
- */
+
 @WebServlet(name = "ListadoAlumnoServlet", value = "/ListadoAlumnoServlet")
 public class ListadoAlumnoServlet extends HttpServlet {
    

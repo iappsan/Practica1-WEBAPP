@@ -12,10 +12,6 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author darkdestiny
- */
 public class CarreraDTO implements Serializable{
     private Carrera entidad;
 
@@ -54,8 +50,8 @@ public class CarreraDTO implements Serializable{
     
     private Connection conexion;
     private void obtenerConexion(){
-        String usuario="deb";
-        String clave="password123";
+        String usuario="root";
+        String clave="root";
         String url ="jdbc:mysql://localhost:3306/EscuelaWeb";
         String driverBD="com.mysql.cj.jdbc.Driver";
         try {
