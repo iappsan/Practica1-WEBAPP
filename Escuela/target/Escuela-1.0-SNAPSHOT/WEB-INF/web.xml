@@ -20,6 +20,10 @@
         <servlet-name>ListadoServletAlumno</servlet-name>
         <servlet-class>com.ipn.mx.controlador.carrera.ListadoServletAlumno</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>VerAlumnoServlet</servlet-name>
+        <servlet-class>com.ipn.mx.controlador.carrera.VerAlumnoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AgregarAlumnoServlet</servlet-name>
         <url-pattern>/AgregarAlumnoServlet</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>ListadoServletAlumno</servlet-name>
         <url-pattern>/ListadoServletAlumno</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VerAlumnoServlet</servlet-name>
+        <url-pattern>/VerAlumnoServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
